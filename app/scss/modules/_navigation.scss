@@ -1,0 +1,21 @@
+.nav-container {
+  flex-basis: 50%;
+  align-self: center;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.nav__link {
+  color: $navigation-link-color;
+  font-size: $nav-link-size;
+  &:hover {
+    color: $navigation-link-color-hover-active;
+  }
+  &:active {
+    color: $navigation-link-color-hover-active;
+  }
+}

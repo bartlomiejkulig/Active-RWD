@@ -1,0 +1,28 @@
+.our-team {
+  @extend .features;
+  padding: 100px 0;
+  justify-content: space-between;
+}
+
+.member-container {
+  width: 23.077%;
+}
+
+.member {
+  text-align: left;
+  &__image {
+    padding-bottom: 25px;
+  }
+  &__name {
+    padding-bottom: 10px;
+  }
+  &__position {
+    padding-bottom: 25px;
+    color: $our-team-member-name-color;
+  }
+  &__description {
+    color: $our-team-member-description-color;
+    line-height: 22px;
+    padding-bottom: 25px;
+  }
+}

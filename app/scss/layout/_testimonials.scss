@@ -1,0 +1,35 @@
+.testimonials {
+  width: 100%;
+  display: flex !important;
+  &__container {
+    width: 100%;
+    display: flex !important;
+  }
+  &__left-side {
+    width: 50%;
+
+    &__img {
+      width: 100%;
+    }
+  }
+  &__right-side {
+    width: 50%;
+    position: relative;
+    background-color: $testimonials-background-color;
+    color: $testimonials-text-color;
+    &__quote {
+      font-size: 3.6rem;
+    }
+    &__caption {
+      padding-top: 30px;
+    }
+    &__content {
+      width: 550px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

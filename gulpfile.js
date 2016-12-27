@@ -5,6 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 
 // ============================================
@@ -40,17 +41,19 @@ gulp.task('js:prod', function() {
 // SCSS tasks
 // ============================================
 
-gulp.task('sass:dev', function() {
+gulp.task('sass:prod', function() {
   return gulp.src('app/scss/*.scss')//jak dodamy foldery to tutaj zmienic
   .pipe(sourcemaps.init())
   .pipe(sass({errLogToConsole: true, outputStyle: 'expanded'}).on('error', sass.logError))
+  .pipe(autoprefixer({browsers: ["> 1%"]}))
+  .pipe(cleanCSS())
   .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('dist/css'))
   .pipe(browserSync.stream({match: '**/*.css'}))
 });
 
-gulp.task('sass:prod', function() {
+gulp.task('sass:dev', function() {
   return gulp.src('app/scss/*.scss')//jak dodamy foldery to tutaj zmienic
   .pipe(sourcemaps.init())
   .pipe(sass({errLogToConsole: true, outputStyle: 'expanded'}).on('error', sass.logError))
@@ -89,13 +92,13 @@ gulp.task('browserSync', function (){
 
 gulp.task('watch:prod', function() {
     gulp.watch('app/js/*.js', ['js:prod']);
-    gulp.watch('app/scss/*.scss', ['sass:prod']);
+    gulp.watch('app/scss/**/*.scss', ['sass:prod']);
     gulp.watch('app/*.html', ['copy-html-files']);
 });
 
 gulp.task('watch:dev', function() {
   gulp.watch('app/js/*.js', ['js:dev']);
-  gulp.watch('app/scss/*.scss', ['sass:dev']);
+  gulp.watch('app/scss/**/*.scss', ['sass:dev']);
   gulp.watch('app/*.html', ['copy-html-files']);
 });
 
