@@ -51,3 +51,49 @@
   background-color: $header-background-color;
   z-index: 150;
 }
+
+.header.menu-opened .header__top {
+  height: 400px;
+  background-color: #2b2c48;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    min-height: 630px;
+  }
+  .header__bottom {
+    padding-top: 70px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .header__bottom__title {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .header__bottom__slogan {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__bottom {
+    padding-top: 0px;
+  }
+  .header__bottom__slogan {
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__bottom__slogan {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .header {
+    min-height: 670px;
+  }
+}

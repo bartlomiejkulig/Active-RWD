@@ -1,12 +1,16 @@
 // IMPORT ALL SASS FILES HERE
 
 // IMPORT UTILS FOLDER
-@import "utils/mixins";
 @import "utils/variables";
 
 //IMPORT BASE FOLDER
 @import "base/reset";
 @import "base/typography";
+
+//IMPORT VENDORS FOLDER
+
+@import "vendors/bower-import";
+
 
 // IMPORT LAYOUT FOLDER
 @import "layout/header";
@@ -24,7 +28,3 @@
 @import "modules/button";
 @import "modules/social";
 @import "modules/animations";
-
-//IMPORT VENDORS FOLDER
-
-@import "vendors/bower-import";

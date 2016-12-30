@@ -37,3 +37,12 @@ p {
 a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1000px) {
+  h2 {
+    font-size: $h2-font-size-small;
+  }
+  h4 {
+    font-size: $h4-font-size-small;
+  }
+}

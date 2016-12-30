@@ -8,6 +8,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 70px 0 100px;
   &__element {
     width: 25%;
@@ -52,5 +53,19 @@
   &__description {
     line-height: 22px;
     color: $footer-text-color;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footer-container {
+    padding-bottom: 20px;
+  }
+  .footer-container__element {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  .about-activebox {
+    width: 200px;
+    margin: 0 auto;
   }
 }
