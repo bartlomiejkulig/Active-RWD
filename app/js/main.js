@@ -11,13 +11,15 @@ $(document).ready(function() {
     arrows: false
   });
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXX ANIMATION
-  var topPosition = $("#works").offset().top;
-  $(window).on("scroll", function() {
-    var scrolling = $(document).scrollTop() + $(window).height();
-    if (scrolling > topPosition + 300) {
-      $(".work").addClass("work-animated");
-    }
-  });
+  if (window.matchMedia('(min-width: 1000px)').matches) {
+    var topPosition = $("#works").offset().top;
+    $(window).on("scroll", function() {
+      var scrolling = $(document).scrollTop() + $(window).height();
+      if (scrolling > topPosition + 300) {
+        $(".work").addClass("work-animated");
+      }
+    });
+  }
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXX NAV CHANGE
   $(window).on("scroll", function() {
     var scroll = $(window).scrollTop();

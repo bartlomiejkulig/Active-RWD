@@ -142,7 +142,12 @@
   .work:nth-child(3), .work:nth-child(7) {
     width: 50%;
   }
+}
 
+@media screen and (max-width: 1000px) {
+  .work {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 600px) {
